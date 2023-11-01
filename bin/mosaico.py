@@ -4,11 +4,11 @@ from glob import glob
 
 def createMosaic(pathInput,nombre,pathOutput):
     
-    files = glob(pathInput+'*')
+    files = glob(pathInput+'*.TIF')
 
     mosaicos = ''
 
-    for file in Path(files).rglob('*.TIF'):
+    for file in files:
         print(file, type(file))
         mosaicos += str(file) + ' '    
 
