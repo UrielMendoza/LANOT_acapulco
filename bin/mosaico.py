@@ -8,7 +8,7 @@ def createMosaic(pathInput,nombre,pathOutput):
 
     mosaicos = ''
 
-    for file in Path(files).rglob('*.tif'):
+    for file in Path(files).rglob('*.TIF'):
         print(file, type(file))
         mosaicos += str(file) + ' '    
 
