@@ -20,7 +20,7 @@ def createMosaic(pathInput,nombre,pathOutput):
     os.system('gdal_translate -CO "TILED=YES" -CO "BLOCKXSIZE=512" -CO "BLOCKYSIZE=512" -CO "BIGTIFF=YES" '+pathOutput+nombre+'_tmp.tif '+nomMosaicTif)
     os.system('gdaladdo -r average '+nomMosaicTif+' 2 4 8 16 32')
 
-pathInput = '/datawork/otis_acapulco/input/geoeye/20231026/'
+pathInput = '/datawork/otis_acapulco/input/geoeye/20231028/'
 pathOutput = '/datawork/otis_acapulco/output/mosaicos/'
 
-createMosaic(pathInput,'geoeye_20231026',pathOutput)
+createMosaic(pathInput,'geoeye_20231028',pathOutput)
