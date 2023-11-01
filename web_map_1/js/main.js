@@ -14,11 +14,6 @@ window.addEventListener('DOMContentLoaded', function() {
     //var mapaSimbologiaImg_1 = document.getElementById('mapa-simbologia-img_1');
     //var mapaSimbologiaImg_2 = document.getElementById('mapa-simbologia-img_2');
     var mapaSimbologiaImg = document.getElementById('mapa-simbologia-img');
-    const toggleMenuButton = document.getElementById("toggleMenuButton");
-    const toggleMenuButtonImg = document.getElementById("toggleMenuButtonImg");
-    const toggleMenuButton2 = document.getElementById("toggleMenuButton2");
-    const toggleMenuButtonImg2 = document.getElementById("toggleMenuButtonImg2");
-    const menuContainer = document.getElementById("menu-container");
 
     // Mostrar el título y los logos después de 1 segundo
     setTimeout(function() {
@@ -29,14 +24,8 @@ window.addEventListener('DOMContentLoaded', function() {
     setTimeout(function() {
         btnInicio.style.opacity = '1';
     }, 1000);
-
-    // Esconde el menú al inicio
-    menuContainer.style.display = "none";
-    // Esconde el titulo
-    mapaTitulo.style.opacity = '0';
-    // Esconde la simbologia
-    mapaSimbologia.style.opacity = '0';
     
+
     // Manejar el evento clic en el botón de inicio
     document.getElementById('btn-inicio').addEventListener('click', function() {
         inicio.style.display = 'none';
@@ -47,41 +36,16 @@ window.addEventListener('DOMContentLoaded', function() {
         //mapaSimbologiaImg_1.style.opacity = '1';
         //mapaSimbologiaImg_2.style.opacity = '0.85';
 
-        // Muestra el botón de toggleMenuButton
-        toggleMenuButton.classList.toggle("hide-button");
-        toggleMenuButton.style.display = "block";
-
         // Menu responsivo
+        const toggleMenuButton = document.getElementById("toggleMenuButton");
+        const menuContainer = document.getElementById("menu-container");
         toggleMenuButton.addEventListener("click", function () {
             menuContainer.style.display = "block";
             toggleMenuButton.classList.toggle("hide-button");
-            // Oculta el titulo
-            mapaTitulo.style.opacity = '0';
-            // Oculta la simbologia
-            mapaSimbologia.style.display = 'none';
-
-            // Pone la imagen de toggleMenuButton por encima del menu
-            toggleMenuButtonImg.style.zIndex = '1000';
-
-            // Muestra el boton de cierre
-            toggleMenuButton2.classList.toggle("hide-button");
-            toggleMenuButton2.style.display = "block";
-
-            // Esconde el boton de toggleMenuButton
-            toggleMenuButton.style.display = "none";
-        });
-
-        // Boton de cierre
-        toggleMenuButton2.addEventListener("click", function () {
-            menuContainer.style.display = "none";
-            toggleMenuButton2.classList.toggle("hide-button");
-            // Muestra el titulo
-            mapaTitulo.style.opacity = '0.75';
-            // Muestra la simbologia
-            mapaSimbologia.style.display = 'block';
-
-            // Muestra el boton de toggleMenuButton
-            toggleMenuButton.style.display = "block";
+            // Si vuelven a dar clic en el botón, se oculta el menú
+            if (toggleMenuButton.classList.contains("hide-button")) {
+                menuContainer.style.display = "none";
+            }S
         });
 
         // Activa la simbologia de la capa 1
@@ -98,19 +62,9 @@ window.addEventListener('DOMContentLoaded', function() {
 
         // Inicializar el mapa
         // Mapa
-        // Cambia el nivel de zoom en la version movil
-        if (window.innerWidth < 768) {
-            // Mapa
-            var map = L.map('map', {
-            }).setView([16.85, -99.85], 12);
-        }
-         // version de escritorio
-        if (window.innerWidth > 768) {
-            // Mapa
-            var map = L.map('map', {
-            }).setView([16.85, -99.85], 12);
-        }       
-
+        const map = L.map('map', {
+        }).setView([16.85, -99.85], 12);
+        
         // Tiles hasta detras de las capas
         const cartodb = L.tileLayer('https://cartodb-basemaps-a.global.ssl.fastly.net/light_all/{z}/{x}/{y}.png', {
             maxZoom: 19,
@@ -157,18 +111,17 @@ window.addEventListener('DOMContentLoaded', function() {
                     wmsLayer.addTo(map);
                     /* Pone la capa al frente de las demas */
                     wmsLayer.bringToFront();
-                    mapaSimbologiaImg.style.opacity = '1';
+                    mapaSimbologiaImg.style.opacity = '0';
 
                     // Pone la capa de sombras al frente de las demas
+ 
 
                     // Controlador de simbologia al activar la capa
                     if (checkboxId == 'capa1') {
-                        //mapaSimbologia.style.opacity = '1';
+                        mapaSimbologia.style.opacity = '0';
                         //mapaSimbologiaImg.src = './assets/icons/simbologia.png';
-                        
-                    } else if (checkboxId == 'capa15') {
-                        //mapaSimbologia.style.opacity = '1';
-                        //mapaSimbologiaImg.src = './assets/icons/simbologia_sd.png';
+                    } else if (checkboxId == 'capa2') {
+
                     } else {
                         mapaSimbologiaImg.src = './assets/icons/sin_simbologia.png ';
                         // Esconde la simbologia
@@ -186,7 +139,6 @@ window.addEventListener('DOMContentLoaded', function() {
         // Capas WMS
         const wms = 'http://132.247.103.145:8080/geoserver/acapulco/wms'
         const wms2 = 'http://132.247.103.145:8080/geoserver/ceniza/wms'
-
 
         var edomex_2022 = L.tileLayer.wms(wms, {
             layers: 'probosque:edomex_2022',
@@ -284,6 +236,7 @@ window.addEventListener('DOMContentLoaded', function() {
         toggleLayer('capa6', poblacion_municipal_densidad);
         toggleLayer('capa7', manzana_gro);
 
+
         // Control de capas
         var baseMaps = {
             "CartoDB Light": cartodb,
@@ -355,26 +308,6 @@ window.addEventListener('DOMContentLoaded', function() {
 
         // Añadir un control de escala
         L.control.scale().addTo(map);
-
-        // Cambia el nivel de zoom en la version movil
-        if (window.innerWidth < 768) {
-            map.setZoom(7.8);
-            // Cambia las coordenadas de inicio en la version movil
-            map.panTo(new L.LatLng(19.3, -95));
-            mapaSimbologia.style.opacity = '1';
-        }
-
-        if (window.innerWidth > 768) {
-            // Si es version de escritorio, elimina la imagen de toggleMenuButton
-            toggleMenuButtonImg.style.display = "none";
-            // Elimina el boton de cierre
-            toggleMenuButton2.style.display = "none";
-            // Muestra el menu
-            menuContainer.style.display = "block";
-            // Muestra la simbologia
-            mapaSimbologia.style.opacity = '1';
-            
-        }   
 
         
     });
