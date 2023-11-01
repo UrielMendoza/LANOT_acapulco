@@ -32,7 +32,8 @@ body {
     width: 100vw; /* Anchura igual al 100% del viewport (pantalla) */
     height: 100vh; /* Altura igual al 100% del viewport (pantalla) */
     flex-shrink: 0;
-    background: url("../assets/img/background.JPG") center / cover no-repeat; /* Centra y ajusta la imagen de fondo */
+    /*Ajusta el background a la pantalla */
+    background: url("../assets/img/otis4.jpg") center / cover no-repeat;
     box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
 }
 

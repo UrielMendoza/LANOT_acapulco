@@ -32,7 +32,7 @@ window.addEventListener('DOMContentLoaded', function() {
         mapaContainer.style.opacity = '1';
         mapaTitulo.style.opacity = '0.75';
         mapaSimbologia.style.background = 'var(--white)';
-        mapaSimbologiaImg.style.opacity = '1';
+        mapaSimbologiaImg.style.opacity = '0';
         //mapaSimbologiaImg_1.style.opacity = '1';
         //mapaSimbologiaImg_2.style.opacity = '0.85';
 
@@ -63,7 +63,7 @@ window.addEventListener('DOMContentLoaded', function() {
         // Inicializar el mapa
         // Mapa
         const map = L.map('map', {
-        }).setView([19.3, -99.5], 9);
+        }).setView([16.85, -99.85], 12);
         
         // Tiles hasta detras de las capas
         const cartodb = L.tileLayer('https://cartodb-basemaps-a.global.ssl.fastly.net/light_all/{z}/{x}/{y}.png', {
@@ -114,40 +114,14 @@ window.addEventListener('DOMContentLoaded', function() {
                     mapaSimbologiaImg.style.opacity = '1';
 
                     // Pone la capa de sombras al frente de las demas
-                    sombra_igecem2.bringToFront();
-                    entidades.bringToFront();
+ 
 
                     // Controlador de simbologia al activar la capa
                     if (checkboxId == 'capa1') {
-                        mapaSimbologia.style.opacity = '1';
+                        mapaSimbologia.style.opacity = '0';
                         mapaSimbologiaImg.src = './assets/icons/simbologia.png';
                     } else if (checkboxId == 'capa2') {
-                        mapaSimbologia.style.opacity = '1';
-                        mapaSimbologiaImg.src = './assets/icons/simbologia.png';
-                    } else if (checkboxId == 'capa3') {
-                        mapaSimbologia.style.opacity = '1';
-                        mapaSimbologiaImg.src = './assets/icons/simbologia_cambio.png';
-                    } else if (checkboxId == 'capa4') {
-                        mapaSimbologia.style.opacity = '1';
-                        mapaSimbologiaImg.src = './assets/icons/simbologia_vegdominante.png';
-                    } else if (checkboxId == 'capa10') {
-                        mapaSimbologia.style.opacity = '1';
-                        mapaSimbologiaImg.src = './assets/icons/simbologia_ndvi.png';
-                    } else if (checkboxId == 'capa11') {
-                        mapaSimbologia.style.opacity = '1';
-                        mapaSimbologiaImg.src = './assets/icons/simbologia_ndvi.png';
-                    } else if (checkboxId == 'capa12') {
-                        mapaSimbologia.style.opacity = '1';
-                        mapaSimbologiaImg.src = './assets/icons/simbologia_dndvi.png';
-                    } else if (checkboxId == 'capa13') {
-                        mapaSimbologia.style.opacity = '1';
-                        mapaSimbologiaImg.src = './assets/icons/simbologia_sd.png';
-                    } else if (checkboxId == 'capa14') {
-                        mapaSimbologia.style.opacity = '1';
-                        mapaSimbologiaImg.src = './assets/icons/simbologia_sd.png';
-                    } else if (checkboxId == 'capa15') {
-                        mapaSimbologia.style.opacity = '1';
-                        mapaSimbologiaImg.src = './assets/icons/simbologia_sd.png';
+
                     } else {
                         mapaSimbologiaImg.src = './assets/icons/sin_simbologia.png ';
                         // Esconde la simbologia
@@ -163,14 +137,15 @@ window.addEventListener('DOMContentLoaded', function() {
               
 
         // Capas WMS
-        const wms = 'http://132.247.103.145:8080/geoserver/probosque/wms'
+        const wms = 'http://132.247.103.145:8080/geoserver/acapulco/wms'
+        const wms2 = 'http://132.247.103.145:8080/geoserver/ceniza/wms'
 
         var edomex_2022 = L.tileLayer.wms(wms, {
             layers: 'probosque:edomex_2022',
             transparent: true,
             format: 'image/png',
             zindex: 5
-        }).addTo(map);
+        });
 
         const select = document.getElementById('cobertura');
 
@@ -189,133 +164,72 @@ window.addEventListener('DOMContentLoaded', function() {
             }
         });
 
-        var edomex_2015 = L.tileLayer.wms(wms, {
-            layers: 'probosque:edomex_2015',
+        var geoeye_20231026 = L.tileLayer.wms(wms, {
+            layers: 'acapulco:geoeye_20231026',
             transparent: true,
             format: 'image/png',
-            zindex: 5
-        });
-
-        var edomex_2015_2022 = L.tileLayer.wms(wms, {
-            layers: 'probosque:edomex_2015_2022',
-            transparent: true,
-            format: 'image/png',
-            zindex: 5,
-            opacity: 0.75
-        });
-
-        var edomex_veg_dominante = L.tileLayer.wms(wms, {
-            layers: 'probosque:edomex_veg_dominante',
-            transparent: true,
-            format: 'image/png',
-            zindex: 5,
-            opacity: 0.5
-        });
-
-        //const select_2015 = document.getElementById('cobertura_2015');
-
-        //select_2015.addEventListener('change', function () {
-        //    const selectedValue = this.value;
-        //    const cqlFilter = "clase_2015 = " + selectedValue; // Reemplaza "atributo_de_la_capa" con el nombre del atributo en tu capa WMS
-        
-            // Actualizar el parámetro CQL_FILTER de la capa WMS
-        //    edomex_2015.setParams({ CQL_FILTER: cqlFilter });
-        //});
-
-        var sombra_igecem2 = L.tileLayer.wms(wms, {
-            layers: 'probosque:sombra_igecem2',
-            transparent: true,
-            format: 'image/png',
-            opacity: 0.25,
             // Siempre esta por encima de las demas
             zindex: 10
-        }).addTo(map);
+        });
 
-        var planet_true_color = L.tileLayer.wms(wms, {
-            layers: 'probosque:planet_true_color',
+        var geoeye_20231028 = L.tileLayer.wms(wms, {
+            layers: 'acapulco:geoeye_20231028',
             transparent: true,
             format: 'image/png',
-            zindex: 0.5
+            // Siempre esta por encima de las demas
+            zindex: 10
         });
 
-        var planet_false_color = L.tileLayer.wms(wms, {
-            layers: 'probosque:planet_false_color',
-            transparent: true,
-            format: 'image/png',
-            zindex: 1
-        });
-
-        var planet_nir_color = L.tileLayer.wms(wms, {
-            layers: 'probosque:planet_nir_color',
-            transparent: true,
-            format: 'image/png',
-            zindex: 1
-        });
-
-        var spot_ndvi_2015 = L.tileLayer.wms(wms, {
-            layers: 'probosque:spot_ndvi_2015',
-            transparent: true,
-            format: 'image/png'
-        });
-
-        var planet_ndvi_2022 = L.tileLayer.wms(wms, {
-            layers: 'probosque:planet_ndvi_2022',
-            transparent: true,
-            format: 'image/png'
-        });
-
-        var spot_planet_dndvi = L.tileLayer.wms(wms, {
-            layers: 'probosque:spot_planet_dndvi',
-            transparent: true,
-            format: 'image/png'
-        });
-
-        var spot_planet_dndvi_1sd = L.tileLayer.wms(wms, {
-            layers: 'probosque:spot_planet_dndvi_1sd',
-            transparent: true,
-            format: 'image/png'
-        });
-
-        var spot_planet_dndvi_2sd = L.tileLayer.wms(wms, {
-            layers: 'probosque:spot_planet_dndvi_2sd',
-            transparent: true,
-            format: 'image/png'
-        });
-
-        var spot_planet_dndvi_3sd = L.tileLayer.wms(wms, {
-            layers: 'probosque:spot_planet_dndvi_3sd',
-            transparent: true,
-            format: 'image/png'
-        });
-
-        var entidades = L.tileLayer.wms(wms, {
-            layers: 'probosque:entidades_probosque',
+        var geoeye_20231029 = L.tileLayer.wms(wms, {
+            layers: 'acapulco:geoeye_20231029',
             transparent: true,
             format: 'image/png',
             // Siempre esta por encima de las demas
             zindex: 10
         }).addTo(map);
+
+        var worldview3_20231027 = L.tileLayer.wms(wms, {
+            layers: 'acapulco:worldview3_20231027',
+            transparent: true,
+            format: 'image/png',
+            // Siempre esta por encima de las demas
+            zindex: 10
+        });
+
+        var poblacion_municipal = L.tileLayer.wms(wms2, {
+            layers: 'ceniza:poblacion_municipal',
+            transparent: true,
+            format: 'image/png',
+            // Siempre esta por encima de las demas
+            zindex: 10
+        });
+
+        var poblacion_municipal_densidad = L.tileLayer.wms(wms2, {
+            layers: 'ceniza:poblacion_municipal_densidad',
+            transparent: true,
+            format: 'image/png',
+            // Siempre esta por encima de las demas
+            zindex: 10
+        });
+
+        var manzana_gro = L.tileLayer.wms(wms, {
+            layers: '	acapulco:manzana_2020',
+            transparent: true,
+            format: 'image/png',
+            // Siempre esta por encima de las demas
+            zindex: 10
+        });
 
         // Pone al frente la capa de entidades y la sombra
-        entidades.bringToFront();
-        sombra_igecem2.bringToFront();
 
         // Activacion y desactivacion de capas
-        toggleLayer('capa1', edomex_2022);
-        toggleLayer('capa2', edomex_2015);
-        toggleLayer('capa3', edomex_2015_2022);
-        toggleLayer('capa4', edomex_veg_dominante);
-        toggleLayer('capa5', sombra_igecem2);
-        toggleLayer('capa6', entidades);
-        toggleLayer('capa7', planet_true_color);
-        toggleLayer('capa8', planet_false_color);
-        toggleLayer('capa9', planet_nir_color);
-        toggleLayer('capa10', planet_ndvi_2022);
-        toggleLayer('capa11', spot_ndvi_2015); 
-        toggleLayer('capa12', spot_planet_dndvi);
-        toggleLayer('capa13', spot_planet_dndvi_1sd);
-        toggleLayer('capa14', spot_planet_dndvi_2sd);
-        toggleLayer('capa15', spot_planet_dndvi_3sd);
+        toggleLayer('capa1', geoeye_20231026);
+        toggleLayer('capa2', geoeye_20231028);
+        toggleLayer('capa3', geoeye_20231029);
+        toggleLayer('capa4', worldview3_20231027);
+        toggleLayer('capa5', poblacion_municipal);
+        toggleLayer('capa6', poblacion_municipal_densidad);
+        toggleLayer('capa7', manzana_gro);
 
 
         // Control de capas
