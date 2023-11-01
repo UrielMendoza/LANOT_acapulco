@@ -212,7 +212,7 @@ body {
     border-radius: 2rem;
     padding: 2rem;
     /* Define un tamaño maximo para el menú vertical */
-    max-height: 35vh;
+    max-height: 65vh;
     /* Añade scroll al menú */
     overflow-y: auto;
     /* Cambia el diseño del scroll */
