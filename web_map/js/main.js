@@ -212,6 +212,33 @@ window.addEventListener('DOMContentLoaded', function() {
         //    }
         //});
 
+        var planet_skysat_20230113 = L.tileLayer.wms(wms, {
+            layers: 'acapulco:planet_skysat_20230113',
+            transparent: true,
+            format: 'image/png',
+            // Siempre esta por encima de las demas
+            maxZoom: 20,
+            zindex: 10
+        });
+
+        var planet_20231023 = L.tileLayer.wms(wms, {
+            layers: 'acapulco:planet_20231023',
+            transparent: true,
+            format: 'image/png',
+            // Siempre esta por encima de las demas
+            maxZoom: 20,
+            zindex: 10
+        });
+
+        var planet_20231031 = L.tileLayer.wms(wms, {
+            layers: 'acapulco:planet_20231031',
+            transparent: true,
+            format: 'image/png',
+            // Siempre esta por encima de las demas
+            maxZoom: 20,
+            zindex: 10
+        });
+
         var geoeye_20231026 = L.tileLayer.wms(wms, {
             layers: 'acapulco:geoeye_20231026',
             transparent: true,
@@ -285,6 +312,9 @@ window.addEventListener('DOMContentLoaded', function() {
         toggleLayer('capa5', poblacion_municipal);
         toggleLayer('capa6', poblacion_municipal_densidad);
         toggleLayer('capa7', manzana_gro);
+        toggleLayer('capa8', planet_skysat_20230113);
+        toggleLayer('capa9', planet_20231023);
+        toggleLayer('capa10', planet_20231031);
 
 
         // Control de capas
