@@ -43,7 +43,7 @@ window.addEventListener('DOMContentLoaded', function() {
         mapaContainer.style.opacity = '1';
         mapaTitulo.style.opacity = '0.75';
         mapaSimbologia.style.background = 'var(--white)';
-        mapaSimbologiaImg.style.opacity = '0';
+        //mapaSimbologiaImg.style.opacity = '1';
         //mapaSimbologiaImg_1.style.opacity = '1';
         //mapaSimbologiaImg_2.style.opacity = '0.85';
 
@@ -160,6 +160,7 @@ window.addEventListener('DOMContentLoaded', function() {
                     mapaSimbologiaImg.style.opacity = '1';
 
                     // Pone la capa de sombras al frente de las demas
+                    //entidades.bringToFront();
 
                     // Controlador de simbologia al activar la capa
                     if (checkboxId == 'capa1') {
@@ -187,13 +188,12 @@ window.addEventListener('DOMContentLoaded', function() {
         const wms = 'http://132.247.103.145:8080/geoserver/acapulco/wms'
         const wms2 = 'http://132.247.103.145:8080/geoserver/ceniza/wms'
 
-
         var edomex_2022 = L.tileLayer.wms(wms, {
             layers: 'probosque:edomex_2022',
             transparent: true,
             format: 'image/png',
             zindex: 5
-        });
+        }).addTo(map);
 
         //const select = document.getElementById('cobertura');
 
@@ -274,6 +274,8 @@ window.addEventListener('DOMContentLoaded', function() {
         });
 
         // Pone al frente la capa de entidades y la sombra
+        //entidades.bringToFront();
+
 
         // Activacion y desactivacion de capas
         toggleLayer('capa1', geoeye_20231026);
@@ -283,6 +285,7 @@ window.addEventListener('DOMContentLoaded', function() {
         toggleLayer('capa5', poblacion_municipal);
         toggleLayer('capa6', poblacion_municipal_densidad);
         toggleLayer('capa7', manzana_gro);
+
 
         // Control de capas
         var baseMaps = {
@@ -358,9 +361,9 @@ window.addEventListener('DOMContentLoaded', function() {
 
         // Cambia el nivel de zoom en la version movil
         if (window.innerWidth < 768) {
-            map.setZoom(7.8);
+            map.setZoom(10);
             // Cambia las coordenadas de inicio en la version movil
-            map.panTo(new L.LatLng(19.3, -95));
+            map.panTo(new L.LatLng(16.85, -99.85));
             mapaSimbologia.style.opacity = '1';
         }
 

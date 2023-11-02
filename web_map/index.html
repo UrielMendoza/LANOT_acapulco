@@ -72,7 +72,6 @@
         <div class="menu-container" id="menu-container">
             <!-- Panel de capas -->
             <aside class="menu" id="menu">
-
                 <!-- Seccion de logos-->
                 <div class="capas-lista-logos">
                     <div class="grupo1">
@@ -90,56 +89,63 @@
                         <span>
                             <img src="./assets/icons/INEGI.png" alt="edomex">
                         </span>
-                    </div>                  
+                    </div>                   
                 </div>
 
                 <!-- Contenido del menú capas-->
                 <div class="capas-lista">
 
-
                     <div class="capas-lista-titulo">
                         <img class="capas-lista-icono" src="./assets/icons/rgb.svg" alt="layers">
-                        <h1>Imágenes satelitales GeoEye RGB.</h1>
-                    </div>   
+                        <h1>Imágenes satelitales RGB previas al evento.</h1>
+                    </div>  
+                    <!-- Lista de capas -->
+                    <div class="capas-lista-elemento">
+                        <input type="checkbox" id="capa" name="capa" value="capa" >
+                        <label for="capa"></label>
+                        <span>
+                            <img src="" alt="">
+                        </span>
+                    </div>
+                    <div class="capas-lista-titulo">
+                        <img class="capas-lista-icono" src="./assets/icons/rgb.svg" alt="layers">
+                        <h1>Imágenes satelitales RGB posteriores al evento.</h1>
+                    </div>                   
                     <!-- Lista de capas -->
                     <div class="capas-lista-elemento">
                         <input type="checkbox" id="capa1" name="capa1" value="capa1" >
-                        <label for="capa1">2023-10-26.</label>
+                        <label for="capa1">GeoEye 2023-10-26.</label>
+                        <span>
+                            <img src="" alt="">
+                        </span>
+                    </div>
+                    <div class="capas-lista-elemento">
+                        <input type="checkbox" id="capa4" name="capa4" value="capa4" >
+                        <label for="capa4">WorldView-3 2023-10-27.</label>
                         <span>
                             <img src="" alt="">
                         </span>
                     </div>
                     <div class="capas-lista-elemento">
                         <input type="checkbox" id="capa2" name="capa2" value="capa2" >
-                        <label for="capa2">2023-10-28.</label>
+                        <label for="capa2">GeoEye 2023-10-28.</label>
                         <span>
                             <img src="" alt="">
                         </span>
                     </div>
                     <div class="capas-lista-elemento">
                         <input type="checkbox" id="capa3" name="capa3" value="capa3" checked >
-                        <label for="capa3">2023-10-29.</label>
+                        <label for="capa3">GeoEye 2023-10-29.</label>
                         <span>
                             <img src="" alt="">
                         </span>
                     </div>
-                    <div class="capas-lista-titulo">
-                        <img class="capas-lista-icono" src="./assets/icons/rgb.svg" alt="layers">
-                        <h1>Imágenes satelitales WorldView-3 RGB.</h1>
-                    </div>   
-                    <!-- Lista de capas -->
-                    <div class="capas-lista-elemento">
-                        <input type="checkbox" id="capa4" name="capa4" value="capa4" >
-                        <label for="capa4">2023-10-27.</label>
-                        <span>
-                            <img src="" alt="">
-                        </span>
-                    </div>
+
                     <div class="capas-lista-titulo">
                         <img class="capas-lista-icono" src="./assets/icons/rgb.svg" alt="layers">
                         <h1>Productos satalitales.</h1>
-                    </div>   
-                    <!-- Lista de capas -->
+                    </div>            
+                    <!-- Lista de capas -->         
                     <div class="capas-lista-elemento">
                         <input type="checkbox" id="capa" name="capa" value="capa" >
                         <label for="capa">Luces nocturnas Suomi-NPP.</label>
@@ -150,19 +156,15 @@
 
                     <div class="capas-lista-titulo">
                         <img class="capas-lista-icono" src="./assets/icons/layers.svg" alt="layers">
-                        <h1>Capas.</h1>
-                    </div>                    
-                    <!-- Lista de capas -->
-                    
+                        <h1>Capas complementarias.</h1>
+                    </div>                     
                     <div class="capas-lista-elemento">
-                        <input type="checkbox" id="capa7" name="capa7" value="capa7" checked>
+                        <input type="checkbox" id="capa7" name="capa7" value="capa7" >
                         <label for="capa7">Delimitación manzana Edo. Guerrero 2020.</label>
                         <span>
                             <img src="" alt="">
                         </span>
                     </div>
-
-
                     <div class="capas-lista-elemento">
                         <input type="checkbox" id="capa5" name="capa5" value="capa5">
                         <label for="capa5">Población municipal 2022.<br>Edo. México.</label>
@@ -177,26 +179,66 @@
                             <img src="" alt="">
                         </span>
                     </div>
-
-
+                    <div class="capas-lista-elemento">
+                        <input type="checkbox" id="capa13" name="capa13" value="capa13">
+                        <label for="capa13"></label>
+                        <span>
+                            <img src="" alt="">
+                        </span>
+                    </div>
+                    <div class="capas-lista-elemento">
+                        <input type="checkbox" id="capa14" name="capa14" value="capa14">
+                        <label for="capa14"></label>
+                        <span>
+                            <img src="" alt="">
+                        </span>
+                    </div>
+                    <div class="capas-lista-elemento">
+                        <input type="checkbox" id="capa15" name="capa15" value="capa15">
+                        <label for="capa15"></label>
+                        <span>
+                            <img src="" alt="">
+                        </span>
+                    </div>
+                    <div class="capas-lista-elemento">
+                        <input type="checkbox" id="capa" name="capa" value="capa" >
+                        <label for="capa"></label>
+                        <span>
+                            <img src="" alt="">
+                        </span>
+                    </div>
+                    <div class="capas-lista-elemento">
+                        <input type="checkbox" id="capa" name="capa" value="capa" >
+                        <label for="capa"></label>
+                        <span>
+                            <img src="" alt="">
+                        </span>
+                    </div>
+                    <div class="capas-lista-elemento">
+                        <input type="checkbox" id="capa" name="capa" value="capa" >
+                        <label for="capa"></label>
+                        <span>
+                            <img src="" alt="">
+                        </span>
+                    </div>
+                    <div class="capas-lista-elemento">
+                        <input type="checkbox" id="capa" name="capa" value="capa" >
+                        <label for="capa"></label>
+                        <span>
+                            <img src="" alt="">
+                        </span>
+                    </div>
+                    <div class="capas-lista-elemento">
+                        <input type="checkbox" id="capa" name="capa" value="capa" >
+                        <label for="capa"></label>
+                        <span>
+                            <img src="" alt="">
+                        </span>
+                    </div>
 
                 </div>
-                
-                <!-- Contenido de la consulta-->
-<!--                 <div class="capas-lista">
-                    <div class="capas-lista-titulo">
-                        <img class="capas-lista-icono" src="./assets/icons/search.svg" alt="layers">
-                        <h1>Consulta.</h1> -->
-                        <!-- Panel de seleccion de categoria de cobertura-->
-<!--                         <div id="busqueda" class="busqueda">
-                            <label for="categoria" id="categoria">.</label>
-                            <select id="cobertura">
-                                <option value="'TODOS'">Todos.</option>
-                            </select>
-                            <br>
-                        </div>
-                    </div>
-                </div> -->
+
+
 
             </aside>
 
@@ -216,14 +258,16 @@
             <img id="mapa-simbologia-img" alt="igg_simbologia">
         </div>
 
-        <!-- Boton de menu -->
-        <button id="toggleMenuButton" class="toggle-menu-button"><<</button>
-
         <!-- Popup -->
         <div id="popup"></div>
 
         <!-- Mapa -->
-        <div id="map"></div>
+        <div id="map">
+            <!-- Boton de menu -->
+            <button id="toggleMenuButton" class="toggle-menu-button">
+                <img src="./assets/icons/menu.svg" alt="menu" id="toggleMenuButtonImg">
+            </button>
+        </div>
 
     </section>
     
