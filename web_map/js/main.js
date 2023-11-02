@@ -159,8 +159,8 @@ window.addEventListener('DOMContentLoaded', function() {
                     wmsLayer.bringToFront();
                     mapaSimbologiaImg.style.opacity = '1';
 
-                    // Pone la capa de sombras al frente de las demas
-                    //entidades.bringToFront();
+                    // Pone la capa al frente de las demas
+                    limite_gro.bringToFront();
 
                     // Controlador de simbologia al activar la capa
                     if (checkboxId == 'capa1') {
@@ -300,6 +300,38 @@ window.addEventListener('DOMContentLoaded', function() {
             zindex: 10
         });
 
+        var otis_lin_ren = L.tileLayer.wms(wms, {
+            layers: '	acapulco:otis_lin_ren ',
+            transparent: true,
+            format: 'image/png',
+            // Siempre esta por encima de las demas
+            zindex: 10
+        });
+
+        var otis_pts = L.tileLayer.wms(wms, {
+            layers: '	acapulco:otis_pts ',
+            transparent: true,
+            format: 'image/png',
+            // Siempre esta por encima de las demas
+            zindex: 10
+        });
+
+        var otis_windswath = L.tileLayer.wms(wms, {
+            layers: '	acapulco:otis_windswath ',
+            transparent: true,
+            format: 'image/png',
+            // Siempre esta por encima de las demas
+            zindex: 10
+        });
+
+        var limite_gro = L.tileLayer.wms(wms, {
+            layers: '	acapulco:limite_gro ',
+            transparent: true,
+            format: 'image/png',
+            // Siempre esta por encima de las demas
+            zindex: 10
+        }).addTo(map);
+
         // Pone al frente la capa de entidades y la sombra
         //entidades.bringToFront();
 
@@ -315,6 +347,10 @@ window.addEventListener('DOMContentLoaded', function() {
         toggleLayer('capa8', planet_skysat_20230113);
         toggleLayer('capa9', planet_20231023);
         toggleLayer('capa10', planet_20231031);
+        toggleLayer('capa11', otis_lin_ren);
+        toggleLayer('capa12', otis_pts);
+        toggleLayer('capa13', otis_windswath);
+        toggleLayer('capa14', limite_gro);
 
 
         // Control de capas
