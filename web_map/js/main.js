@@ -163,14 +163,27 @@ window.addEventListener('DOMContentLoaded', function() {
                     limite_gro.bringToFront();
 
                     // Controlador de simbologia al activar la capa
-                    if (checkboxId == 'capa1') {
-                        //mapaSimbologia.style.opacity = '1';
-                        //mapaSimbologiaImg.src = './assets/icons/simbologia.png';
-                        
-                    } else if (checkboxId == 'capa15') {
-                        //mapaSimbologia.style.opacity = '1';
-                        //mapaSimbologiaImg.src = './assets/icons/simbologia_sd.png';
-                    } else {
+                    if (checkboxId == 'capa5') {
+                        mapaSimbologia.style.opacity = '1';
+                        mapaSimbologiaImg.src = './assets/icons/simbo5.png';                      
+                    }else if (checkboxId == 'capa6') {
+                        mapaSimbologia.style.opacity = '1';
+                        mapaSimbologiaImg.src = './assets/icons/simbo6.png';
+                    }else if (checkboxId == 'capa11') {
+                        mapaSimbologia.style.opacity = '1';
+                        mapaSimbologiaImg.src = './assets/icons/simbo11.png';
+                    }else if (checkboxId == 'capa13') {
+                        mapaSimbologia.style.opacity = '1';
+                        mapaSimbologiaImg.src = './assets/icons/simbo13.png';
+                    }else if (checkboxId == 'capa15') {
+                        mapaSimbologia.style.opacity = '1';
+                        mapaSimbologiaImg.src = './assets/icons/simbo15.png';
+                    }else if (checkboxId == 'capa16') {
+                        mapaSimbologia.style.opacity = '1';
+                        mapaSimbologiaImg.src = './assets/icons/simbo16.png';
+                    }
+                    
+                    else {
                         mapaSimbologiaImg.src = './assets/icons/sin_simbologia.png ';
                         // Esconde la simbologia
                         mapaSimbologia.style.opacity = '0';
