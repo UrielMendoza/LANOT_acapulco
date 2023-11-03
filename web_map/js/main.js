@@ -294,7 +294,9 @@ window.addEventListener('DOMContentLoaded', function() {
             transparent: true,
             format: 'image/png',
             // Siempre esta por encima de las demas
-            zindex: 10
+            zindex: 10,
+            // Transparente del 50%
+            opacity: 0.50
         });
 
         var poblacion_municipal_densidad = L.tileLayer.wms(wms2, {
@@ -302,7 +304,9 @@ window.addEventListener('DOMContentLoaded', function() {
             transparent: true,
             format: 'image/png',
             // Siempre esta por encima de las demas
-            zindex: 10
+            zindex: 10,
+            // Transparente del 50%
+            opacity: 0.50
         });
 
         var manzana_gro = L.tileLayer.wms(wms, {
@@ -334,7 +338,9 @@ window.addEventListener('DOMContentLoaded', function() {
             transparent: true,
             format: 'image/png',
             // Siempre esta por encima de las demas
-            zindex: 10
+            zindex: 10,
+            // Transparente del 50%
+            opacity: 0.50
         });
 
         var limite_gro = L.tileLayer.wms(wms, {
@@ -350,7 +356,9 @@ window.addEventListener('DOMContentLoaded', function() {
             transparent: true,
             format: 'image/png',
             // Siempre esta por encima de las demas
-            zindex: 10
+            zindex: 10,
+            // Transparente del 50%
+            opacity: 0.50
         });
 
         var carretera_gro = L.tileLayer.wms(wms, {
