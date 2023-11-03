@@ -280,6 +280,13 @@ body {
     background-color: var(--white); /* Color del indicador cuando está marcado */
 }
 
+/* Estilo del texto para la fuente de la capa */
+.capas-lista-elemento h3 {
+    color: var(--dark_font);
+    font-size: 1rem;
+    font-weight: bold;
+}
+
 .capas-lista-logos {
     /* Estilos de los logos de las capas */
     margin-bottom: 2rem;

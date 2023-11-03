@@ -181,6 +181,12 @@ window.addEventListener('DOMContentLoaded', function() {
                     }else if (checkboxId == 'capa16') {
                         mapaSimbologia.style.opacity = '1';
                         mapaSimbologiaImg.src = './assets/icons/simbo16.png';
+                    }else if (checkboxId == 'capa17') {
+                        mapaSimbologia.style.opacity = '1';
+                        mapaSimbologiaImg.src = './assets/icons/simbo17.png';
+                    }else if (checkboxId == 'capa18') {
+                        mapaSimbologia.style.opacity = '1';
+                        mapaSimbologiaImg.src = './assets/icons/simbo18.png';
                     }
                     
                     else {
@@ -369,6 +375,26 @@ window.addEventListener('DOMContentLoaded', function() {
             zindex: 10
         });
 
+        var infraestructura = L.tileLayer.wms(wms, {
+            layers: 'acapulco:infraestructura',
+            transparent: true,
+            format: 'image/png',
+            // Siempre esta por encima de las demas
+            zindex: 10,
+            // Transparente del 50%
+            opacity: 0.75
+        });
+
+        var riesgos = L.tileLayer.wms(wms, {
+            layers: 'acapulco:riesgos',
+            transparent: true,
+            format: 'image/png',
+            // Siempre esta por encima de las demas
+            zindex: 10,
+            // Transparente del 50%
+            opacity: 1
+        });
+
         // Pone al frente la capa de entidades y la sombra
         //entidades.bringToFront();
 
@@ -390,6 +416,8 @@ window.addEventListener('DOMContentLoaded', function() {
         toggleLayer('capa14', limite_gro);
         toggleLayer('capa15', pob_ageb);
         toggleLayer('capa16', carretera_gro);
+        toggleLayer('capa17', infraestructura);
+        toggleLayer('capa18', riesgos);
 
 
         // Control de capas
