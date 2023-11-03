@@ -293,7 +293,7 @@ window.addEventListener('DOMContentLoaded', function() {
         });
 
         var manzana_gro = L.tileLayer.wms(wms, {
-            layers: '	acapulco:manzana_2020',
+            layers: 'acapulco:manzana_2020',
             transparent: true,
             format: 'image/png',
             // Siempre esta por encima de las demas
@@ -301,7 +301,7 @@ window.addEventListener('DOMContentLoaded', function() {
         });
 
         var otis_lin_ren = L.tileLayer.wms(wms, {
-            layers: '	acapulco:otis_lin_ren ',
+            layers: 'acapulco:otis_lin_ren',
             transparent: true,
             format: 'image/png',
             // Siempre esta por encima de las demas
@@ -309,7 +309,7 @@ window.addEventListener('DOMContentLoaded', function() {
         });
 
         var otis_pts = L.tileLayer.wms(wms, {
-            layers: '	acapulco:otis_pts ',
+            layers: 'acapulco:otis_pts',
             transparent: true,
             format: 'image/png',
             // Siempre esta por encima de las demas
@@ -317,7 +317,7 @@ window.addEventListener('DOMContentLoaded', function() {
         });
 
         var otis_windswath = L.tileLayer.wms(wms, {
-            layers: '	acapulco:otis_windswath ',
+            layers: 'acapulco:otis_windswath',
             transparent: true,
             format: 'image/png',
             // Siempre esta por encima de las demas
@@ -325,12 +325,28 @@ window.addEventListener('DOMContentLoaded', function() {
         });
 
         var limite_gro = L.tileLayer.wms(wms, {
-            layers: '	acapulco:limite_gro ',
+            layers: 'acapulco:limite_gro',
             transparent: true,
             format: 'image/png',
             // Siempre esta por encima de las demas
             zindex: 10
         }).addTo(map);
+
+        var pob_ageb = L.tileLayer.wms(wms, {
+            layers: 'acapulco:pob_ageb',
+            transparent: true,
+            format: 'image/png',
+            // Siempre esta por encima de las demas
+            zindex: 10
+        });
+
+        var carretera_gro = L.tileLayer.wms(wms, {
+            layers: 'acapulco:carretera_gro',
+            transparent: true,
+            format: 'image/png',
+            // Siempre esta por encima de las demas
+            zindex: 10
+        });
 
         // Pone al frente la capa de entidades y la sombra
         //entidades.bringToFront();
@@ -351,6 +367,8 @@ window.addEventListener('DOMContentLoaded', function() {
         toggleLayer('capa12', otis_pts);
         toggleLayer('capa13', otis_windswath);
         toggleLayer('capa14', limite_gro);
+        toggleLayer('capa15', pob_ageb);
+        toggleLayer('capa16', carretera_gro);
 
 
         // Control de capas
