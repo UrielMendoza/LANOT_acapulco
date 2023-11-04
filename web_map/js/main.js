@@ -187,6 +187,9 @@ window.addEventListener('DOMContentLoaded', function() {
                     }else if (checkboxId == 'capa18') {
                         mapaSimbologia.style.opacity = '1';
                         mapaSimbologiaImg.src = './assets/icons/simbo18.png';
+                    }else if (checkboxId == 'capa20') {
+                        mapaSimbologia.style.opacity = '1';
+                        mapaSimbologiaImg.src = './assets/icons/simbo20.png';
                     }
                     
                     else {
@@ -295,6 +298,106 @@ window.addEventListener('DOMContentLoaded', function() {
             zindex: 10
         });
 
+        var dnb_20231023_1 = L.tileLayer.wms(wms, {
+            layers: 'acapulco:dbn_20231023_1',
+            transparent: true,
+            format: 'image/png',
+            // Siempre esta por encima de las demas
+            zindex: 10,
+            // Transparente del 50%
+            opacity: 1
+        });
+
+        var dnb_20231026_1 = L.tileLayer.wms(wms, {
+            layers: 'acapulco:dnb_20231026_1',
+            transparent: true,
+            format: 'image/png',
+            // Siempre esta por encima de las demas
+            zindex: 10,
+            // Transparente del 50%
+            opacity: 1
+        });
+
+        var dnb_20231027_1 = L.tileLayer.wms(wms, {
+            layers: 'acapulco:dnb_20231027_1',
+            transparent: true,
+            format: 'image/png',
+            // Siempre esta por encima de las demas
+            zindex: 10,
+            // Transparente del 50%
+            opacity: 1
+        });
+
+        var dnb_20231028_1 = L.tileLayer.wms(wms, {
+            layers: 'acapulco:dnb_20231028_1',
+            transparent: true,
+            format: 'image/png',
+            // Siempre esta por encima de las demas
+            zindex: 10,
+            // Transparente del 50%
+            opacity: 1
+        });
+
+        var dnb_20231029_1 = L.tileLayer.wms(wms, {
+            layers: 'acapulco:dnb_20231029_1',
+            transparent: true,
+            format: 'image/png',
+            // Siempre esta por encima de las demas
+            zindex: 10,
+            // Transparente del 50%
+            opacity: 1
+        });
+
+        var dnb_20231030_1 = L.tileLayer.wms(wms, {
+            layers: 'acapulco:dnb_202310230_1',
+            transparent: true,
+            format: 'image/png',
+            // Siempre esta por encima de las demas
+            zindex: 10,
+            // Transparente del 50%
+            opacity: 1
+        });
+
+        var dnb_20231031_1 = L.tileLayer.wms(wms, {
+            layers: 'acapulco:dnb_202310231_1',
+            transparent: true,
+            format: 'image/png',
+            // Siempre esta por encima de las demas
+            zindex: 10,
+            // Transparente del 50%
+            opacity: 1
+        });
+
+        var dnb_20231101_1 = L.tileLayer.wms(wms, {
+            layers: 'acapulco:dnb_20231101_1',
+            transparent: true,
+            format: 'image/png',
+            // Siempre esta por encima de las demas
+            zindex: 10,
+            // Transparente del 50%
+            opacity: 1
+        });
+
+        var dnb_20231102_1 = L.tileLayer.wms(wms, {
+            layers: 'acapulco:dnb_20231102_1',
+            transparent: true,
+            format: 'image/png',
+            // Siempre esta por encima de las demas
+            zindex: 10,
+            // Transparente del 50%
+            opacity: 1
+        });
+
+        var dnb_20231103_1 = L.tileLayer.wms(wms, {
+            layers: 'acapulco:dnb_20231103_1',
+            transparent: true,
+            format: 'image/png',
+            // Siempre esta por encima de las demas
+            zindex: 10,
+            // Transparente del 50%
+            opacity: 1
+        });
+
         var poblacion_municipal = L.tileLayer.wms(wms2, {
             layers: 'ceniza:poblacion_municipal',
             transparent: true,
@@ -395,6 +498,20 @@ window.addEventListener('DOMContentLoaded', function() {
             opacity: 1
         });
 
+
+        var s1_inundacion = L.tileLayer.wms(wms, {
+            layers: 'acapulco:s1_inundacion',
+            transparent: true,
+            format: 'image/png',
+            // Siempre esta por encima de las demas
+            zindex: 10,
+            // Transparente del 50%
+            opacity: 1
+        });
+
+
+
+
         // Pone al frente la capa de entidades y la sombra
         //entidades.bringToFront();
 
@@ -418,6 +535,18 @@ window.addEventListener('DOMContentLoaded', function() {
         toggleLayer('capa16', carretera_gro);
         toggleLayer('capa17', infraestructura);
         toggleLayer('capa18', riesgos);
+        toggleLayer('capa19', dnb_20231023_1);
+        toggleLayer('capa20', s1_inundacion);
+        toggleLayer('capa21', dnb_20231026_1);
+        toggleLayer('capa22', dnb_20231027_1);
+        toggleLayer('capa23', dnb_20231028_1);
+        toggleLayer('capa24', dnb_20231029_1);
+        toggleLayer('capa25', dnb_20231030_1);
+        toggleLayer('capa26', dnb_20231031_1);
+        toggleLayer('capa27', dnb_20231101_1);
+        toggleLayer('capa28', dnb_20231102_1);
+        toggleLayer('capa29', dnb_20231103_1);
+
 
 
         // Control de capas
