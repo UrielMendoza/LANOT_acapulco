@@ -509,6 +509,27 @@ window.addEventListener('DOMContentLoaded', function() {
             opacity: 1
         });
 
+        
+        var cuerpos_agua = L.tileLayer.wms(wms, {
+            layers: 'acapulco:cuerpos_agua',
+            transparent: true,
+            format: 'image/png',
+            // Siempre esta por encima de las demas
+            zindex: 10,
+            // Transparente del 50%
+            opacity: 1
+        });
+
+        var saocom_inundacion = L.tileLayer.wms(wms, {
+            layers: 'acapulco:saocom_inundacion',
+            transparent: true,
+            format: 'image/png',
+            // Siempre esta por encima de las demas
+            zindex: 10,
+            // Transparente del 50%
+            opacity: 1
+        });
+
 
 
 
@@ -546,6 +567,8 @@ window.addEventListener('DOMContentLoaded', function() {
         toggleLayer('capa27', dnb_20231101_1);
         toggleLayer('capa28', dnb_20231102_1);
         toggleLayer('capa29', dnb_20231103_1);
+        toggleLayer('capa30', cuerpos_agua);
+        toggleLayer('capa31', saocom_inundacion);
 
 
 
