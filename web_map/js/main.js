@@ -192,8 +192,12 @@ window.addEventListener('DOMContentLoaded', function() {
                         mapaSimbologiaImg.src = './assets/icons/simbo20.png';
                     }else if (checkboxId == 'capa31') {
                         mapaSimbologia.style.opacity = '1';
-                        mapaSimbologiaImg.src = './assets/icons/simbo31.png';                    }
-
+                        mapaSimbologiaImg.src = './assets/icons/simbo31.png';        
+                    }// De la capa 21 a la 29 usa la misma sombologia la 21
+                    else if (checkboxId == 'capa19' || checkboxId == 'capa21' || checkboxId == 'capa22' || checkboxId == 'capa23' || checkboxId == 'capa24' || checkboxId == 'capa25' || checkboxId == 'capa26' || checkboxId == 'capa27' || checkboxId == 'capa28' || checkboxId == 'capa29') {
+                        mapaSimbologia.style.opacity = '1';
+                        mapaSimbologiaImg.src = './assets/icons/simbo21.png';
+                    }
                     
                     else {
                         mapaSimbologiaImg.src = './assets/icons/sin_simbologia.png ';
