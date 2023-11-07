@@ -197,6 +197,18 @@ window.addEventListener('DOMContentLoaded', function() {
                     else if (checkboxId == 'capa19' || checkboxId == 'capa21' || checkboxId == 'capa22' || checkboxId == 'capa23' || checkboxId == 'capa24' || checkboxId == 'capa25' || checkboxId == 'capa26' || checkboxId == 'capa27' || checkboxId == 'capa28' || checkboxId == 'capa29') {
                         mapaSimbologia.style.opacity = '1';
                         mapaSimbologiaImg.src = './assets/icons/simbo21.png';
+                    }else if (checkboxId == 'capa32') {
+                        mapaSimbologia.style.opacity = '1';
+                        mapaSimbologiaImg.src = './assets/icons/simbo32.png';
+                        // Manda detras el video de todas la demas capas
+                        videoOverlay1.bringToBack();
+                        map.fitBounds(bounds1);
+                    }else if (checkboxId == 'capa33') {
+                        mapaSimbologia.style.opacity = '1';
+                        mapaSimbologiaImg.src = './assets/icons/simbo32.png';
+                        // Manda detras el video de todas la demas capas
+                        videoOverlay2.bringToBack();
+                        map.fitBounds(bounds2);
                     }
                     
                     else {
@@ -537,6 +549,103 @@ window.addEventListener('DOMContentLoaded', function() {
             opacity: 1
         });
 
+        // Video overlay
+        const videoUrls1 = [
+            'http://132.247.103.145/acapulco/data/videos/goes18-oti-2023-pos1.webm',
+            'http://132.247.103.145/acapulco/data/videos/goes18-oti-2023-pos1.mp4'
+        ];
+        const errorOverlayUrl = 'https://cdn-icons-png.flaticon.com/512/110/110686.png';
+        const bounds1 = L.latLngBounds([[17.8953364, -104.7754401], [7.6764766, -88.0010854]]);    
+        const videoOverlay1 = L.videoOverlay(videoUrls1, bounds1, {
+            opacity: 0.75,
+            errorOverlayUrl,
+            interactive: true,
+            autoplay: true,
+            muted: true,
+            playsInline: true,
+            zIndex: -1
+        });
+
+        // Envia el video detras de las demas capas
+        videoOverlay1.bringToBack();
+    
+        videoOverlay1.on('load', () => {
+            const MyPauseControl = L.Control.extend({
+                onAdd() {
+                    const button = L.DomUtil.create('button');
+                    button.title = 'Pause';
+                    button.innerHTML = '<span aria-hidden="true">⏸</span>';
+                    L.DomEvent.on(button, 'click', () => {
+                        videoOverlay1.getElement().pause();
+                    });
+                    return button;
+                }
+            });
+            const MyPlayControl = L.Control.extend({
+                onAdd() {
+                    const button = L.DomUtil.create('button');
+                    button.title = 'Play';
+                    button.innerHTML = '<span aria-hidden="true">▶️</span>';
+                    L.DomEvent.on(button, 'click', () => {
+                        videoOverlay1.getElement().play();
+                    });
+                    return button;
+                }
+            });
+    
+            const pauseControl = (new MyPauseControl()).addTo(map);
+            const playControl = (new MyPlayControl()).addTo(map);
+        });
+
+        // Video overlay
+        const videoUrls2 = [
+            'http://132.247.103.145/acapulco/data/videos/goes18-oti-2023-pos1.webm',
+            'http://132.247.103.145/acapulco/data/videos/goes18-oti-2023-pos1.mp4'
+        ];
+        const errorOverlayUr2 = 'https://cdn-icons-png.flaticon.com/512/110/110686.png';
+        const bounds2 = L.latLngBounds([[21.3619321, -106.7229585], [10.8613293, -89.7938372]]);    
+        const videoOverlay2 = L.videoOverlay(videoUrls2, bounds2, {
+            opacity: 0.75,
+            errorOverlayUrl,
+            interactive: true,
+            autoplay: true,
+            muted: true,
+            playsInline: true,
+            zIndex: -1
+        });
+
+        // Envia el video detras de las demas capas
+        videoOverlay2.bringToBack();
+    
+        videoOverlay2.on('load', () => {
+            const MyPauseControl = L.Control.extend({
+                onAdd() {
+                    const button = L.DomUtil.create('button');
+                    button.title = 'Pause';
+                    button.innerHTML = '<span aria-hidden="true">⏸</span>';
+                    L.DomEvent.on(button, 'click', () => {
+                        videoOverlay2.getElement().pause();
+                    });
+                    return button;
+                }
+            });
+            const MyPlayControl = L.Control.extend({
+                onAdd() {
+                    const button = L.DomUtil.create('button');
+                    button.title = 'Play';
+                    button.innerHTML = '<span aria-hidden="true">▶️</span>';
+                    L.DomEvent.on(button, 'click', () => {
+                        videoOverlay2.getElement().play();
+                    });
+                    return button;
+                }
+            });
+    
+            const pauseControl = (new MyPauseControl()).addTo(map);
+            const playControl = (new MyPlayControl()).addTo(map);
+        });
+    
+
 
 
 
@@ -576,6 +685,9 @@ window.addEventListener('DOMContentLoaded', function() {
         toggleLayer('capa29', dnb_20231103_1);
         toggleLayer('capa30', cuerpos_agua);
         toggleLayer('capa31', saocom_inundacion);
+        toggleLayer('capa32', videoOverlay1);
+        toggleLayer('capa33', videoOverlay2);
+
 
 
 
