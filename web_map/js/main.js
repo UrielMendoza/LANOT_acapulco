@@ -190,7 +190,10 @@ window.addEventListener('DOMContentLoaded', function() {
                     }else if (checkboxId == 'capa20') {
                         mapaSimbologia.style.opacity = '1';
                         mapaSimbologiaImg.src = './assets/icons/simbo20.png';
-                    }
+                    }else if (checkboxId == 'capa31') {
+                        mapaSimbologia.style.opacity = '1';
+                        mapaSimbologiaImg.src = './assets/icons/simbo31.png';                    }
+
                     
                     else {
                         mapaSimbologiaImg.src = './assets/icons/sin_simbologia.png ';
