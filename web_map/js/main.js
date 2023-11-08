@@ -187,7 +187,7 @@ window.addEventListener('DOMContentLoaded', function() {
                     }else if (checkboxId == 'capa18') {
                         mapaSimbologia.style.opacity = '1';
                         mapaSimbologiaImg.src = './assets/icons/simbo18.png';
-                    }else if (checkboxId == 'capa20') {
+                    }else if (checkboxId == 'capa20' || checkboxId == 'capa39') {
                         mapaSimbologia.style.opacity = '1';
                         mapaSimbologiaImg.src = './assets/icons/simbo20.png';
                     }else if (checkboxId == 'capa30') {
@@ -605,7 +605,15 @@ window.addEventListener('DOMContentLoaded', function() {
             // Transparente del 50%
             opacity: 1
         });
-
+        var s1_inundacion_2 = L.tileLayer.wms(wms, {
+            layers: 'acapulco:s1_inundacion_3',
+            transparent: true,
+            format: 'image/png',
+            // Siempre esta por encima de las demas
+            zindex: 10,
+            // Transparente del 50%
+            opacity: 1
+        });
 
         // Video overlay
         const videoUrls1 = [
@@ -750,6 +758,7 @@ window.addEventListener('DOMContentLoaded', function() {
         toggleLayer('capa36', dnb_20231106_mask);
         toggleLayer('capa37', dnb_20231107_mask);
         toggleLayer('capa38', puentes_carreteras);
+        toggleLayer('capa39', s1_inundacion_2);
 
         // Control de capas
         var baseMaps = {
