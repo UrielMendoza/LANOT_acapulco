@@ -190,9 +190,15 @@ window.addEventListener('DOMContentLoaded', function() {
                     }else if (checkboxId == 'capa20') {
                         mapaSimbologia.style.opacity = '1';
                         mapaSimbologiaImg.src = './assets/icons/simbo20.png';
+                    }else if (checkboxId == 'capa30') {
+                        mapaSimbologia.style.opacity = '1';
+                        mapaSimbologiaImg.src = './assets/icons/simbo30.png';
                     }else if (checkboxId == 'capa31') {
                         mapaSimbologia.style.opacity = '1';
                         mapaSimbologiaImg.src = './assets/icons/simbo31.png';        
+                    }else if (checkboxId == 'capa38') {
+                        mapaSimbologia.style.opacity = '1';
+                        mapaSimbologiaImg.src = './assets/icons/simbo38.png';        
                     }// De la capa 21 a la 29 usa la misma sombologia la 21
                     else if (checkboxId == 'capa19' || checkboxId == 'capa21' || checkboxId == 'capa22' || checkboxId == 'capa23' || checkboxId == 'capa24' || checkboxId == 'capa25' || checkboxId == 'capa26' || checkboxId == 'capa27' || checkboxId == 'capa28' || checkboxId == 'capa29') {
                         mapaSimbologia.style.opacity = '1';
@@ -317,8 +323,8 @@ window.addEventListener('DOMContentLoaded', function() {
             zindex: 10
         });
 
-        var dnb_20231023_1 = L.tileLayer.wms(wms, {
-            layers: 'acapulco:dbn_20231023_1',
+        var dnb_20231023_mask = L.tileLayer.wms(wms, {
+            layers: 'acapulco:dbn_20231023_mask',
             transparent: true,
             format: 'image/png',
             // Siempre esta por encima de las demas
@@ -327,8 +333,8 @@ window.addEventListener('DOMContentLoaded', function() {
             opacity: 1
         });
 
-        var dnb_20231026_1 = L.tileLayer.wms(wms, {
-            layers: 'acapulco:dnb_20231026_1',
+        var dnb_20231026_mask = L.tileLayer.wms(wms, {
+            layers: 'acapulco:dbn_20231026_mask',
             transparent: true,
             format: 'image/png',
             // Siempre esta por encima de las demas
@@ -337,8 +343,8 @@ window.addEventListener('DOMContentLoaded', function() {
             opacity: 1
         });
 
-        var dnb_20231027_1 = L.tileLayer.wms(wms, {
-            layers: 'acapulco:dnb_20231027_1',
+        var dnb_20231027_mask = L.tileLayer.wms(wms, {
+            layers: 'acapulco:dbn_20231027_mask',
             transparent: true,
             format: 'image/png',
             // Siempre esta por encima de las demas
@@ -347,8 +353,8 @@ window.addEventListener('DOMContentLoaded', function() {
             opacity: 1
         });
 
-        var dnb_20231028_1 = L.tileLayer.wms(wms, {
-            layers: 'acapulco:dnb_20231028_1',
+        var dnb_20231028_mask = L.tileLayer.wms(wms, {
+            layers: 'acapulco:dbn_20231028_mask',
             transparent: true,
             format: 'image/png',
             // Siempre esta por encima de las demas
@@ -357,8 +363,8 @@ window.addEventListener('DOMContentLoaded', function() {
             opacity: 1
         });
 
-        var dnb_20231029_1 = L.tileLayer.wms(wms, {
-            layers: 'acapulco:dnb_20231029_1',
+        var dnb_20231029_mask = L.tileLayer.wms(wms, {
+            layers: 'acapulco:dbn_20231029_mask',
             transparent: true,
             format: 'image/png',
             // Siempre esta por encima de las demas
@@ -367,8 +373,8 @@ window.addEventListener('DOMContentLoaded', function() {
             opacity: 1
         });
 
-        var dnb_20231030_1 = L.tileLayer.wms(wms, {
-            layers: 'acapulco:dnb_202310230_1',
+        var dnb_20231030_mask = L.tileLayer.wms(wms, {
+            layers: 'acapulco:dbn_20231030_mask',
             transparent: true,
             format: 'image/png',
             // Siempre esta por encima de las demas
@@ -377,8 +383,8 @@ window.addEventListener('DOMContentLoaded', function() {
             opacity: 1
         });
 
-        var dnb_20231031_1 = L.tileLayer.wms(wms, {
-            layers: 'acapulco:dnb_202310231_1',
+        var dnb_20231031_mask = L.tileLayer.wms(wms, {
+            layers: 'acapulco:dbn_20231031_mask',
             transparent: true,
             format: 'image/png',
             // Siempre esta por encima de las demas
@@ -387,8 +393,8 @@ window.addEventListener('DOMContentLoaded', function() {
             opacity: 1
         });
 
-        var dnb_20231101_1 = L.tileLayer.wms(wms, {
-            layers: 'acapulco:dnb_20231101_1',
+        var dnb_20231101_mask = L.tileLayer.wms(wms, {
+            layers: 'acapulco:dbn_20231101_mask',
             transparent: true,
             format: 'image/png',
             // Siempre esta por encima de las demas
@@ -397,8 +403,8 @@ window.addEventListener('DOMContentLoaded', function() {
             opacity: 1
         });
 
-        var dnb_20231102_1 = L.tileLayer.wms(wms, {
-            layers: 'acapulco:dnb_20231102_1',
+        var dnb_20231102_mask = L.tileLayer.wms(wms, {
+            layers: 'acapulco:dbn_20231102_mask',
             transparent: true,
             format: 'image/png',
             // Siempre esta por encima de las demas
@@ -407,8 +413,8 @@ window.addEventListener('DOMContentLoaded', function() {
             opacity: 1
         });
 
-        var dnb_20231103_1 = L.tileLayer.wms(wms, {
-            layers: 'acapulco:dnb_20231103_1',
+        var dnb_20231103_mask = L.tileLayer.wms(wms, {
+            layers: 'acapulco:dbn_20231103_mask',
             transparent: true,
             format: 'image/png',
             // Siempre esta por encima de las demas
@@ -549,6 +555,58 @@ window.addEventListener('DOMContentLoaded', function() {
             opacity: 1
         });
 
+        var dnb_20231104_mask = L.tileLayer.wms(wms, {
+            layers: 'acapulco:dbn_20231104_mask',
+            transparent: true,
+            format: 'image/png',
+            // Siempre esta por encima de las demas
+            zindex: 10,
+            // Transparente del 50%
+            opacity: 1
+        });
+
+        var dnb_20231105_mask = L.tileLayer.wms(wms, {
+            layers: 'acapulco:dbn_20231105_mask',
+            transparent: true,
+            format: 'image/png',
+            // Siempre esta por encima de las demas
+            zindex: 10,
+            // Transparente del 50%
+            opacity: 1
+        });
+
+
+        var dnb_20231106_mask = L.tileLayer.wms(wms, {
+            layers: 'acapulco:dbn_20231105_mask',
+            transparent: true,
+            format: 'image/png',
+            // Siempre esta por encima de las demas
+            zindex: 10,
+            // Transparente del 50%
+            opacity: 1
+        });
+
+        var dnb_20231107_mask = L.tileLayer.wms(wms, {
+            layers: 'acapulco:dbn_20231105_mask',
+            transparent: true,
+            format: 'image/png',
+            // Siempre esta por encima de las demas
+            zindex: 10,
+            // Transparente del 50%
+            opacity: 1
+        });
+
+        var puentes_carreteras = L.tileLayer.wms(wms, {
+            layers: 'acapulco:puentes_carreteras',
+            transparent: true,
+            format: 'image/png',
+            // Siempre esta por encima de las demas
+            zindex: 10,
+            // Transparente del 50%
+            opacity: 1
+        });
+
+
         // Video overlay
         const videoUrls1 = [
             'http://132.247.103.145/acapulco/data/videos/goes18-oti-2023-pos1.webm',
@@ -672,24 +730,26 @@ window.addEventListener('DOMContentLoaded', function() {
         toggleLayer('capa16', carretera_gro);
         toggleLayer('capa17', infraestructura);
         toggleLayer('capa18', riesgos);
-        toggleLayer('capa19', dnb_20231023_1);
+        toggleLayer('capa19', dnb_20231023_mask);
         toggleLayer('capa20', s1_inundacion);
-        toggleLayer('capa21', dnb_20231026_1);
-        toggleLayer('capa22', dnb_20231027_1);
-        toggleLayer('capa23', dnb_20231028_1);
-        toggleLayer('capa24', dnb_20231029_1);
-        toggleLayer('capa25', dnb_20231030_1);
-        toggleLayer('capa26', dnb_20231031_1);
-        toggleLayer('capa27', dnb_20231101_1);
-        toggleLayer('capa28', dnb_20231102_1);
-        toggleLayer('capa29', dnb_20231103_1);
+        toggleLayer('capa21', dnb_20231026_mask);
+        toggleLayer('capa22', dnb_20231027_mask);
+        toggleLayer('capa23', dnb_20231028_mask);
+        toggleLayer('capa24', dnb_20231029_mask);
+        toggleLayer('capa25', dnb_20231030_mask);
+        toggleLayer('capa26', dnb_20231031_mask);
+        toggleLayer('capa27', dnb_20231101_mask);
+        toggleLayer('capa28', dnb_20231102_mask);
+        toggleLayer('capa29', dnb_20231103_mask);
         toggleLayer('capa30', cuerpos_agua);
         toggleLayer('capa31', saocom_inundacion);
         toggleLayer('capa32', videoOverlay1);
         toggleLayer('capa33', videoOverlay2);
-
-
-
+        toggleLayer('capa34', dnb_20231104_mask);
+        toggleLayer('capa35', dnb_20231105_mask);
+        toggleLayer('capa36', dnb_20231106_mask);
+        toggleLayer('capa37', dnb_20231107_mask);
+        toggleLayer('capa38', puentes_carreteras);
 
         // Control de capas
         var baseMaps = {
