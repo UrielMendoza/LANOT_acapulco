@@ -260,7 +260,7 @@ window.addEventListener('DOMContentLoaded', function() {
         //});
 
         var planet_skysat_20230113 = L.tileLayer.wms(wms, {
-            layers: 'acapulco:planet_skysat_20230113',
+            layers: 'acapulco:planet_skysat_c_20230113',
             transparent: true,
             format: 'image/png',
             // Siempre esta por encima de las demas
