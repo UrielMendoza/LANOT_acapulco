@@ -665,8 +665,8 @@ window.addEventListener('DOMContentLoaded', function() {
 
         // Video overlay
         const videoUrls2 = [
-            'http://132.247.103.145/acapulco/data/videos/goes18-oti-2023-pos1.webm',
-            'http://132.247.103.145/acapulco/data/videos/goes18-oti-2023-pos1.mp4'
+            'http://132.247.103.145/acapulco/data/videos/goes18-oti-2023-pos2.webm',
+            'http://132.247.103.145/acapulco/data/videos/goes18-oti-2023-pos2.mp4'
         ];
         const errorOverlayUr2 = 'https://cdn-icons-png.flaticon.com/512/110/110686.png';
         const bounds2 = L.latLngBounds([[21.3619321, -106.7229585], [10.8613293, -89.7938372]]);    
