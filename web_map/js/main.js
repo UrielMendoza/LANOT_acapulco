@@ -615,6 +615,16 @@ window.addEventListener('DOMContentLoaded', function() {
             opacity: 1
         });
 
+        var kusam_20231031_1 = L.tileLayer.wms(wms, {
+            layers: 'acapulco:kusam_20231031_1',
+            transparent: true,
+            format: 'image/png',
+            // Siempre esta por encima de las demas
+            zindex: 10,
+            // Transparente del 50%
+            opacity: 1
+        });
+
         // Video overlay
         const videoUrls1 = [
             'http://132.247.103.145/acapulco/data/videos/goes18-oti-2023-pos1.webm',
@@ -759,6 +769,7 @@ window.addEventListener('DOMContentLoaded', function() {
         toggleLayer('capa37', dnb_20231107_mask);
         toggleLayer('capa38', puentes_carreteras);
         toggleLayer('capa39', s1_inundacion_2);
+        toggleLayer('capa40', kusam_20231031_1);
 
         // Control de capas
         var baseMaps = {
