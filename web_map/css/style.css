@@ -334,6 +334,58 @@ body {
     transform: scale(1.1);
 }
 
+.button_info {
+    /* Opacidad solo del background */
+    background: var(--blue_probosque);
+    opacity: 0.8;
+    border-radius: 2rem;
+    /* Elimina el contorno del boton */
+    border: none;
+}
+
+.button_info img {
+    /* Estilos de los botones de las capas */
+    height: 2rem;
+    float: left;
+    margin-right: 1rem;
+    margin: 1rem;
+    /* Aparese el cursor de la mano */
+    cursor: pointer;
+}
+
+.button_info img:hover {
+    /* Cambia el color del icono al pasar el cursor */
+    filter: invert(100%);
+}
+
+.capas_info {
+    /* Estilos de la información de las capas */
+    margin-bottom: 2rem;
+    /* Opacidad solo del background */
+    background: var(--white);
+    opacity: 0.5;
+    border-radius: 2rem;
+    padding: 1rem;
+}
+
+.capas_info h1 {
+    /* Estilos de los títulos de las capas */
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+    /* Color del texto */
+    color: var(--dark_font);
+    font-weight: bold;
+}
+
+.capas_info h2 {
+    /* Estilos de los títulos de las capas */
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    /* Color del texto */
+    color: var(--dark_font);
+}
+
 #map {
     flex: 1; /* El mapa ocupará el espacio restante */
 }

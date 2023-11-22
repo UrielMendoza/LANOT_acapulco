@@ -513,6 +513,7 @@ window.addEventListener('DOMContentLoaded', function() {
             opacity: 0.75
         });
 
+
         var riesgos = L.tileLayer.wms(wms, {
             layers: 'acapulco:riesgos',
             transparent: true,
@@ -617,6 +618,16 @@ window.addEventListener('DOMContentLoaded', function() {
 
         var kusam_20231031_1 = L.tileLayer.wms(wms, {
             layers: 'acapulco:kusam_20231031_1',
+            transparent: true,
+            format: 'image/png',
+            // Siempre esta por encima de las demas
+            zindex: 10,
+            // Transparente del 50%
+            opacity: 1
+        });
+
+        var kusam_20231031_2 = L.tileLayer.wms(wms, {
+            layers: 'acapulco:kusam_20231031_2',
             transparent: true,
             format: 'image/png',
             // Siempre esta por encima de las demas
@@ -770,6 +781,7 @@ window.addEventListener('DOMContentLoaded', function() {
         toggleLayer('capa38', puentes_carreteras);
         toggleLayer('capa39', s1_inundacion_2);
         toggleLayer('capa40', kusam_20231031_1);
+        toggleLayer('capa41', kusam_20231031_2);
 
         // Control de capas
         var baseMaps = {
