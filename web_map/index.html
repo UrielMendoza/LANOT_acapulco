@@ -22,6 +22,10 @@
     <link rel="stylesheet" href="https://unpkg.com/leaflet-control-geocoder/dist/Control.Geocoder.css" />
     <script src="https://unpkg.com/leaflet-control-geocoder/dist/Control.Geocoder.js"></script>
 
+    <!-- Swal -->
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
+
     <!-- Estilo -->
     <link rel="stylesheet" href="./css/style.css"> 
 
@@ -443,6 +447,14 @@
             <img id="mapa-simbologia-img" alt="igg_simbologia">
         </div>
 
+        <dialog id="info">
+            <h3>¡Esto es una ventana modal!</h3>
+              <p>Y no le falta detalle. Su contenido, su botón parar cerrar, su fondo con color personalizado... ¡Tiene de todo!</p>
+              <p>Hablando del botón para cerrar, vamos a hacer clic en él para ver si todo funciona como debería.</p>
+            <button id="info_close">Cerrar</button>
+        </dialog>
+
+
         <!-- Popup -->
         <div id="popup"></div>
 
@@ -452,6 +464,7 @@
             <button id="toggleMenuButton" class="toggle-menu-button">
                 <img src="./assets/icons/menu.svg" alt="menu" id="toggleMenuButtonImg">
             </button>
+            
         </div>
 
     </section>

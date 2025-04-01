@@ -19,6 +19,9 @@ window.addEventListener('DOMContentLoaded', function() {
     const toggleMenuButton2 = document.getElementById("toggleMenuButton2");
     const toggleMenuButtonImg2 = document.getElementById("toggleMenuButtonImg2");
     const menuContainer = document.getElementById("menu-container");
+    const buttonInfo = document.getElementById("button_info");  
+    const info = document.getElementById("info");
+    const info_close = document.getElementById("info_close");
 
     // Mostrar el título y los logos después de 1 segundo
     setTimeout(function() {
@@ -227,6 +230,22 @@ window.addEventListener('DOMContentLoaded', function() {
                     mapaSimbologia.style.opacity = '0';
                     //mapaSimbologiaImg.style.opacity = '0';
                 }
+            });
+        }
+
+        /* Funcion que muestra una ventana emergente con la informacion de la capa al hacer clic en el boton de info que se llama buttonInfo */
+        function showInfo(idInfo) {
+            /*Funcion que se activa al hacer clic en el boton de info*/
+            buttonInfo.addEventListener("click", function () {
+                /* Muestra la ventana emergente */
+                info.style.display = "block";
+                info.style.opacity = "1";
+                swal('integrate from g to a integrate from h to b integrate from i to c u * v * w du dv dw');
+            });
+            /* Cierra la ventana emergente al hacer clic en el boton de cerrar */
+            info_close.addEventListener("click", function () {
+                info.style.display = "none";
+                info.style.opacity = "0";
             });
         }
               
@@ -782,6 +801,9 @@ window.addEventListener('DOMContentLoaded', function() {
         toggleLayer('capa39', s1_inundacion_2);
         toggleLayer('capa40', kusam_20231031_1);
         toggleLayer('capa41', kusam_20231031_2);
+
+        // Muestra la ventana emergente con la informacion de la capa
+        showInfo('capa1');
 
         // Control de capas
         var baseMaps = {
