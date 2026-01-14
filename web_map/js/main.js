@@ -251,8 +251,8 @@ window.addEventListener('DOMContentLoaded', function() {
               
 
         // Capas WMS
-        const wms = 'https://132.247.103.145:8080/geoserver/acapulco/wms'
-        const wms2 = 'https://132.247.103.145:8080/geoserver/ceniza/wms'
+        const wms = 'https://www.lanot.unam.mx/geoserver/acapulco/wms'
+        const wms2 = 'https://www.lanot.unam.mx/geoserver/ceniza/wms'
 
         var edomex_2022 = L.tileLayer.wms(wms, {
             layers: 'probosque:edomex_2022',
@@ -657,8 +657,8 @@ window.addEventListener('DOMContentLoaded', function() {
 
         // Video overlay
         const videoUrls1 = [
-            'https://132.247.103.145/acapulco/data/videos/goes18-oti-2023-pos1.webm',
-            'https://132.247.103.145/acapulco/data/videos/goes18-oti-2023-pos1.mp4'
+            'https://www.lanot.unam.mx/acapulco/data/videos/goes18-oti-2023-pos1.webm',
+            'https://www.lanot.unam.mx/acapulco/data/videos/goes18-oti-2023-pos1.mp4'
         ];
         const errorOverlayUrl = 'https://cdn-icons-png.flaticon.com/512/110/110686.png';
         const bounds1 = L.latLngBounds([[17.8953364, -104.7754401], [7.6764766, -88.0010854]]);    
@@ -705,8 +705,8 @@ window.addEventListener('DOMContentLoaded', function() {
 
         // Video overlay
         const videoUrls2 = [
-            'https://132.247.103.145/acapulco/data/videos/goes18-oti-2023-pos2.webm',
-            'https://132.247.103.145/acapulco/data/videos/goes18-oti-2023-pos2.mp4'
+            'https://www.lanot.unam.mx/acapulco/data/videos/goes18-oti-2023-pos2.webm',
+            'https://www.lanot.unam.mx/acapulco/data/videos/goes18-oti-2023-pos2.mp4'
         ];
         const errorOverlayUr2 = 'https://cdn-icons-png.flaticon.com/512/110/110686.png';
         const bounds2 = L.latLngBounds([[21.3619321, -106.7229585], [10.8613293, -89.7938372]]);    
