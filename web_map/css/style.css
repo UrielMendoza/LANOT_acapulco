@@ -183,18 +183,21 @@ body {
     background: var(--dark_font);
     /* Añade sombra al menú */
     box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
-    transition: opacity 1s ease-in-out;
+    transition: all 0.3s ease-in-out;
     /* Tipo de letra del menú */
     font-family: 'Roboto', sans-serif;
     color: var(--white);
     padding: 2rem;
     /* Tamaño vertical ajustado a la pantalla */
     height: 100vh;
-    /* Añade scroll al menú */
-/*     overflow-y: auto; */
-    /* Cambia el diseño del scroll */
-/*     scrollbar-width: thin;
-    scrollbar-color: var(--blue_probosque) var(--dark_font); */
+    /* VISIBLE POR DEFECTO */
+    display: block;
+    position: relative;
+}
+
+/* Clase para ocultar el menú */
+.menu-container.hidden {
+    display: none;
 }
 
 .menu {
@@ -482,21 +485,75 @@ box-shadow: 8px 8px 0 #321c3b;
 
 }
 
-/* Estilo del boton de menu */
+/* ========================================
+   BOTONES DE MENU - VISIBLES EN AMBAS VERSIONES
+   ======================================== */
+
+/* Botón para ABRIR el menú (hamburguesa) - OCULTO cuando el menú está visible */
 .toggle-menu-button {
-    display: none;    
-}
-
-/* Estilo para mostrar el menú cuando se haga clic en el botón */
-.show-menu .menu-container {
-    display: block;
-}
-
-.hide-button .toggle-menu-button {
     display: none;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    top: 10px;
+    left: 10px;
+    width: 44px;
+    height: 44px;
+    max-width: 44px;
+    max-height: 44px;
+    border: none;
+    background: var(--white);
+    border-radius: 4px;
+    cursor: pointer;
+    padding: 4px;
+    z-index: 1001;
+    box-shadow: 0 1px 5px rgba(0,0,0,0.4);
 }
 
-/* Estilos para celular */
+.toggle-menu-button img {
+    width: 32px;
+    height: 32px;
+    max-width: 32px;
+    max-height: 32px;
+}
+
+/* Botón para CERRAR el menú - Dentro del panel, arriba a la derecha */
+.toggle-menu-button2 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: 40px;
+    height: 40px;
+    max-width: 40px;
+    max-height: 40px;
+    border: none;
+    background: var(--blue_probosque);
+    border-radius: 4px;
+    cursor: pointer;
+    padding: 4px;
+    z-index: 1002;
+    box-shadow: 0 1px 5px rgba(0,0,0,0.4);
+}
+
+.toggle-menu-button2:hover {
+    background: var(--blue_probosque_hover);
+}
+
+.toggle-menu-button2 img {
+    width: 28px;
+    height: 28px;
+    max-width: 28px;
+    max-height: 28px;
+    /* Icono blanco */
+    filter: brightness(0) invert(1);
+}
+
+/* ========================================
+   ESTILOS RESPONSIVE - CELULAR
+   ======================================== */
 @media (max-width: 768px) {
     .inicio {
         /* Tamaño para celular */
@@ -591,44 +648,21 @@ box-shadow: 8px 8px 0 #321c3b;
         font-size: 20px;
     }
 
-    /* Estilo menu movil */
+    /* Menú en móvil ocupa toda la pantalla */
     .menu-container {
-        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        z-index: 1000;
     }
 
+    /* Botón hamburguesa en móvil - debajo de controles de zoom */
     .toggle-menu-button {
-        display: none;
-        /* Estilo toogle de menu app */
-        width: 50px;
-        height: 50px;
-        /* Elimina el borde del boton */
-        border: none;        
-    }
-
-    .toggle-menu-button img {
-        width: 50px;
-        height: 50px;
-        /*Pone el boton por encima del mapa */
-        position: absolute;
         top: 90px;
         left: 10px;
-        z-index: 1000;
     }
-
-    .toggle-menu-button2 {
-        display: none;        
-    }
-
-    .toggle-menu-button2 img {
-        width: 50px;
-        height: 50px;
-        /*Pone el boton por encima del mapa */
-        position: absolute;
-        bottom: 0px;
-        left: 20px;
-        z-index: 1000;
-    }
-
 
     /* Cambia el tamaño del titulo del mapa para celular */
     #mapa-titulo {
@@ -649,13 +683,4 @@ box-shadow: 8px 8px 0 #321c3b;
         opacity: 1;
         display: block;
     }
-
-    /* Cambia el tamaño de la simbología para celular */
-/*     #mapa-simbologia img {
-        opacity: 0;
-        width: 240px;
-        height: 180px;
-    } */
-
-
 }
